@@ -174,6 +174,15 @@ main {
     padding: 0 1rem;
     font-size: 1.125rem;
     font-weight: 500;
+    flex-direction: column;
+
+}
+
+@media (min-width: 640px) {
+    .intro-actions {
+        flex-direction: row;
+    }
+
 }
 
 /* ------------------------------------
@@ -327,7 +336,7 @@ main {
     border-top-left-radius: 0.5rem;
     border-top-right-radius: 0.5rem;
     box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-    transition: transform 0.3s ease;
+    transition: transform 0.5s ease, right 0.5s ease;
     display: none;
 }
 
@@ -340,6 +349,7 @@ main {
     .project-image {
         display: block;
     }
+
 }
 
 .group:hover .project-image {
