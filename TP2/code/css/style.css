@@ -1,52 +1,120 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+/* ------------------------------------
+   Global Reset & Fonts
+------------------------------------ */
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap');
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+
+body {
+    scroll-behavior: smooth;
+    font-family: "Inter", sans-serif;
+    background-color: #f9fafb;
+    color: #1f2937;
+    position: relative;
+    padding-top: 7rem;
+}
+
 a {
     text-decoration: none;
     color: inherit;
 }
 
-body {
-    scroll-behavior: smooth;
-    font-family: "Inter", serif;
-    background-color: #f9fafb;
-    color: #1f2937;
+/* ------------------------------------
+   Header & Navigation
+------------------------------------ */
+.header {
     position: relative;
-    padding-top: 7rem;
-    @media (min-width: 640px) {
-        padding-top: 9rem;
-    }
-
+    z-index: 999;
 }
 
+.header-bg {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 4.5rem;
+    background-color: rgba(255,255,255,0.8);
+    border: 1px solid rgba(255,255,255,0.4);
+    box-shadow: 0 10px 15px -3px rgba(0,0,0,0.03),
+    0 4px 6px -2px rgba(0,0,0,0.03);
+    backdrop-filter: blur(0.5rem);
+}
+
+.nav {
+    display: flex;
+    position: fixed;
+    top: 0.15rem;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 3rem;
+    padding: 0.5rem 0;
+}
+
+.nav-list {
+    display: flex;
+    width: 22rem;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    row-gap: 0.25rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #6B7280;
+    list-style: none;
+}
+
+.nav-item {
+    height: 75%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.nav-link {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    padding: 0.75rem;
+    color: #6B7280;
+    transition: color 0.2s;
+}
+
+.nav-item.active .nav-link {
+    color: #1F2937;
+}
+
+.active-bg {
+    background-color: #f3f4f6;
+    border-radius: 9999px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -10;
+}
+
+/* ------------------------------------
+   Main Content & Intro Section
+------------------------------------ */
 main {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-left: 1rem;
-    padding-right: 1rem;
+    padding: 0 1rem;
 }
-
 
 #intro {
     margin-bottom: 7rem;
     max-width: 50rem;
     text-align: center;
-    scroll-margin-top: 100rem;
 }
 
-@media (min-width: 640px) {
-    #intro {
-        margin-bottom: 0;
-    }
-}
-
-
-/* Layout & Containers */
 .intro-flex {
     display: flex;
     align-items: center;
@@ -57,22 +125,21 @@ main {
     position: relative;
 }
 
-/* Image Styling */
 .intro-image {
     height: 6rem;
     width: 6rem;
     border-radius: 50%;
     object-fit: cover;
     transition: transform 0.5s;
-    border: 0.35rem solid white;
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
-    0 4px 6px -2px rgba(0, 0, 0, 0.05);
-}
-.intro-image:hover {
-        transform: scale(1.1) rotate(6deg);
+    border: 0.35rem solid #fff;
+    box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1),
+    0 4px 6px -2px rgba(0,0,0,0.05);
 }
 
-/* Emoji on Image */
+.intro-image:hover {
+    transform: scale(1.1) rotate(6deg);
+}
+
 .greeting-emoji {
     position: absolute;
     bottom: 0;
@@ -80,18 +147,13 @@ main {
     font-size: 1.875rem;
 }
 
-/* Heading Styling */
 .intro-heading {
-    margin-top: 1rem;
-    margin-bottom: 2.5rem;
-    padding-left: 1rem;
-    padding-right: 1rem;
+    margin: 1rem 1rem 2.5rem;
     font-size: 1.5rem;
     font-weight: 500;
     line-height: 1.5;
 }
 
-/* Text Utilities */
 .bold {
     font-weight: bold;
 }
@@ -104,28 +166,27 @@ main {
     text-decoration: underline;
 }
 
-/* Actions Container */
 .intro-actions {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
-    padding-left: 1rem;
-    padding-right: 1rem;
+    padding: 0 1rem;
     font-size: 1.125rem;
     font-weight: 500;
 }
 
-/* Button Styles */
+/* ------------------------------------
+   Boutons
+------------------------------------ */
 .contact-btn {
     display: flex;
     align-items: center;
     gap: 0.5rem;
     background-color: #111827;
-    color: white;
+    color: #fff;
     padding: 0.75rem 1.75rem;
     border-radius: 9999px;
-    outline: none;
     transition: transform 0.2s, background-color 0.2s;
 }
 
@@ -135,33 +196,36 @@ main {
 }
 
 .cv-btn {
-    background-color: white;
+    background-color: #fff;
     padding: 0.75rem 1.75rem;
     display: flex;
     align-items: center;
     gap: 0.5rem;
     border-radius: 9999px;
-    outline: none;
     transition: transform 0.2s;
     cursor: pointer;
-    border: 1px solid black;
+    border: 1px solid #000;
 }
 
 .cv-btn:hover {
     transform: scale(1.1);
 }
 
-.linkedin-btn {
-    background-color: white;
+.linkedin-btn,
+.github-btn {
+    background-color: #fff;
     padding: 1rem;
-    color: #4b5563;
     display: flex;
     align-items: center;
     gap: 0.5rem;
     border-radius: 9999px;
     transition: transform 0.2s, color 0.2s;
     cursor: pointer;
-    border: 1px solid black;
+    border: 1px solid #000;
+}
+
+.linkedin-btn {
+    color: #4b5563;
 }
 
 .linkedin-btn:hover {
@@ -170,17 +234,8 @@ main {
 }
 
 .github-btn {
-    background-color: white;
-    padding: 1rem;
     color: #4b5563;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
     font-size: 1.35rem;
-    border-radius: 9999px;
-    transition: transform 0.2s, color 0.2s;
-    cursor: pointer;
-    border: 1px solid black;
 }
 
 .github-btn:hover {
@@ -188,18 +243,20 @@ main {
     color: #1f2937;
 }
 
+/* ------------------------------------
+   Divider
+------------------------------------ */
 .divider {
     background-color: #E5E7EB;
-    margin-top: 6rem;
-    margin-bottom: 6rem;
+    margin: 6rem 0;
     height: 4rem;
     width: 0.25rem;
     border-radius: 9999px;
-    display: block;
 }
 
-/* Project Section */
-
+/* ------------------------------------
+   Section Projects
+------------------------------------ */
 .heading {
     font-size: 1.875rem;
     font-weight: 500;
@@ -207,56 +264,29 @@ main {
     margin-bottom: 2rem;
     text-align: center;
 }
+
 .motion-div {
     margin-bottom: 0.75rem;
 }
 
-/* Remove bottom margin if this is the last child */
 .motion-div:last-child {
     margin-bottom: 0;
 }
 
-
-@media (min-width: 640px) {
-    .motion-div {
-        margin-bottom: 2rem;
-    }
-}
-
-/* -------------------------
-   Project Section (.project-section)
-   ------------------------- */
 .project-section {
     background-color: #f3f4f6;
     max-width: 42rem;
-    border: 1px solid black;
+    border: 1px solid #000;
     border-radius: 0.5rem;
     overflow: hidden;
     position: relative;
     transition: all 0.3s ease;
 }
 
-
 .project-section:hover {
-    overflow: visible;
     background-color: #e5e7eb;
 }
 
-
-@media (min-width: 640px) {
-    .project-section {
-        padding-right: 2rem;
-        height: 20rem;
-    }
-
-    .group-even .project-section {
-        padding-left: 2rem;
-    }
-}
-
-/* -------------------------
-   Project Content (.project-content)
-   ------------------------- */
 .project-content {
     padding: 1rem 1.25rem 0.75rem;
     display: flex;
@@ -264,22 +294,6 @@ main {
     height: 100%;
 }
 
-@media (min-width: 640px) {
-    .project-content {
-        padding-top: 2.5rem;
-        padding-left: 2.5rem;
-        padding-right: 0.5rem;
-        max-width: 50%;
-    }
-
-    .group-even .project-content {
-        margin-left: 18rem;
-    }
-}
-
-/* -------------------------
-   Title and Description
-   ------------------------- */
 .project-title {
     font-size: 1.5rem;
     font-weight: 600;
@@ -305,9 +319,6 @@ main {
     font-size: 0.875rem;
 }
 
-/* -------------------------
-   Project Image (.project-image)
-   ------------------------- */
 .project-image {
     position: absolute;
     top: 2rem;
@@ -318,38 +329,139 @@ main {
     box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
     transition: transform 0.3s ease;
     display: none;
-
-}
-.motion-div group:last-child project-image{
-    right: -20rem;
 }
 
+/* Classe pour une image de projet de taille différente */
+.project-image-large {
+    width: 40.25rem;
+}
 
-
-/* Show image on small screens */
 @media (min-width: 640px) {
     .project-image {
         display: block;
     }
 }
 
-/* -------------------------
-   Group Hover Effects on the Image
-   ------------------------- */
 .group:hover .project-image {
     transform: scale(1.04) translateX(-0.75rem) translateY(0.75rem) rotate(-2deg);
     z-index: 9999;
     right: 10rem;
 }
+.project-section:hover {
+    overflow: visible;
+    z-index: 10;
+}
+
+
 .group:last-child .project-image {
     transform: scale(1.04) translateX(-0.75rem) translateY(0.75rem) rotate(-2deg);
     right: -22rem;
 }
+
 .group:last-child:hover .project-image {
     transform: scale(1.04) translateX(-0.75rem) translateY(0.75rem) rotate(-2deg);
     right: -10rem;
 }
 
+/* ------------------------------------
+   Section Contact
+------------------------------------ */
+.contact-section {
+    margin-bottom: 5rem;
+    max-width: 38rem;
+    text-align: center;
+}
 
+.contact-section .heading {
+    font-size: 1.875rem;
+    font-weight: 500;
+    text-transform: capitalize;
+    margin-bottom: 2rem;
+}
 
+.contact-text {
+    color: #374151;
+    margin-top: -1.5rem;
+}
 
+.contact-form {
+    margin-top: 2.5rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-input,
+.contact-textarea {
+    border: 1px solid #000;
+    border-radius: 0.5rem;
+    transition: all 0.2s;
+    padding: 1rem;
+}
+
+.contact-input {
+    height: 3.5rem;
+}
+
+.contact-textarea {
+    height: 13rem;
+    margin: 0.75rem 0;
+}
+
+/* ------------------------------------
+   Bouton de soumission
+------------------------------------ */
+.submit-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    height: 3rem;
+    width: 8rem;
+    background-color: #111827;
+    color: #fff;
+    border-radius: 9999px;
+    outline: none;
+    transition: all 0.2s;
+    cursor: pointer;
+}
+
+.submit-icon {
+    font-size: 0.75rem;
+    opacity: 0.7;
+    transition: all 0.2s;
+}
+
+/* ------------------------------------
+   Footer
+------------------------------------ */
+.footer {
+    margin-bottom: 2.5rem;
+    padding: 0 1rem;
+    text-align: center;
+    color: #6B7280;
+}
+
+.footer small {
+    display: block;
+    font-size: 0.75rem;
+    margin-bottom: 0.5rem;
+}
+
+/* ------------------------------------
+   Responsive Adjustments
+------------------------------------ */
+@media (min-width: 640px) {
+    body {
+        padding-top: 9rem;
+    }
+    #intro {
+        margin-bottom: 0;
+    }
+    .project-content {
+        padding: 2.5rem 2.5rem 0.75rem 2.5rem;
+        max-width: 50%;
+    }
+    .group-even .project-content {
+        margin-left: 18rem;
+    }
+}
