@@ -20,4 +20,4 @@ La demo de la page : [lien 🔗](https://khouya-ai.github.io/TP-web/TP2/code/goo
 
 
 ## Conclusion
-Cet exercice permet de mettre en pratique les concepts de base de la création de sites web avec des style en utilisant CSS.
+Ces exercices permettent de mettre en pratique les concepts de base de la création de sites web avec des styles personnalisés.
