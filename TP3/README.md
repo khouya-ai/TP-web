@@ -12,13 +12,17 @@ L'objectif de ce tp est de pratiquer les bases de language javascript
 ```javascript
 // Conversion de températures
 while (true) {
+    // on demande à l'utilisateur de saisir une température en Fahrenheit
     let tempF = parseFloat(prompt("Entrez une température en degrés Fahrenheit : "));
-    // si l'utilisateur clique sur cancel
+    // si l'utilisateur clique sur cancel ou entre une valeur non numérique
     if(isNaN(tempF)){
         break;
     }
+    // on affiche la température en Fahrenheit
     console.log("Une température en Fahrenheit : :",tempF)
+    // on convertit la température en Celsius
     let tempC = (tempF - 32) * 5/9;
+    // on affiche la température en Celsius
     console.log("cette température équivaut a ", tempC.toFixed(2), " degrés Celsius" )
 }
 
@@ -26,12 +30,41 @@ while (true) {
 ```
 ### Exercice 2 : Conversion de durées
 ```javascript
+function hjms(s) {
+    // on affiche la durée en secondes
+    console.log("Une durée en secondes :", s)
+    // on calcule le nombre de jours, d'heures, de minutes et de secondes
+    let j = Math.floor(s/(60*60*24));
+    let h = Math.floor((s%(60*60*24))/(60*60));
+    let m = Math.floor(((s%(60*60*24))%(60*60))/60);
+    let rs = Math.floor(s - (j*60*60*24 + h*60*60 + m*60));
+    // on choisit le texte à afficher en fonction de la valeur
+    let textj = (j === 0 ) ? "":(j===1)? `${j} jour`:`${j} jours`
+    let texth = (h === 0 ) ? "":(h===1)? `${h} heure`:`${h} heures`
+    let textm = (m === 0 ) ? "":(m===1)? `${m} minute`:`${m} minutes`
+    let texts = (s === 0 ) ? "":(s===1)? `${s} second`:`${s} seconds`
+    // on affiche le résultat
+    console.log(`cette durée équivaut à ${textj} ${texth} ${textm} ${texts} `)
+}
 
+while (true) {
+    let s = parseInt(prompt("Entrez une durée en secondes : "));
+    // si l'utilisateur clique sur cancel ou entre une valeur non numérique
+    if (isNaN(s)) {
+        break;
+    }
+    // on appelle la fonction hjms
+    hjms(s);
+}
 
 ```
 ### Exercice 2-bis : Améliorer le programme de conversion de durées
 ```javascript
-
+    // pour ameliorer le programme j'ai ajouté des conditions pour afficher les textes en fonction de la valeur
+    let textj = (j === 0 ) ? "":(j===1)? `${j} jour`:`${j} jours`
+    let texth = (h === 0 ) ? "":(h===1)? `${h} heure`:`${h} heures`
+    let textm = (m === 0 ) ? "":(m===1)? `${m} minute`:`${m} minutes`
+    let texts = (s === 0 ) ? "":(s===1)? `${s} second`:`${s} seconds`
 
 ```
 ### Exercice 3 : Classer 3 nombres
