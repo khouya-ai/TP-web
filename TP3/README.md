@@ -22,8 +22,8 @@ while (true) {
     console.log("cette température équivaut a ", tempC.toFixed(2), " degrés Celsius" )
 }
 
-
 ```
+![img.png](code/img.png)
 ### Exercice 2 : Conversion de durées
 ```javascript
 function hjms(s) {
@@ -54,6 +54,8 @@ while (true) {
 }
 
 ```
+![img_9.png](code/img_9.png)
+
 ### Exercice 2-bis : Améliorer le programme de conversion de durées
 Pour ameliorer le programme j'ai ajouté des conditions pour afficher les textes en fonction de la valeur
 ```javascript
@@ -63,6 +65,8 @@ Pour ameliorer le programme j'ai ajouté des conditions pour afficher les textes
     let texts = (s === 0 ) ? "":(s===1)? `${s} second`:`${s} seconds`
 
 ```
+![img_1.png](code/img_1.png)
+
 ### Exercice 3 : Classer 3 nombres
 ```javascript
 // Demander à l'utilisateur d'entrer trois nombres
@@ -83,6 +87,7 @@ if (!isNaN(num1) && !isNaN(num2) && !isNaN(num3)) {
     console.log("Veuillez entrer des nombres valides.");
 }
 ```
+![img_2.png](code/img_2.png)
 
 ### Exercice 4 : Affichage de motifs - escaliers
 ```javascript
@@ -121,6 +126,8 @@ triangle2(taille);
 const taille = parseInt(prompt("Entrez la taille du motif : "));
 triangle2(taille);
 ```
+![img_3.png](code/img_3.png)
+
 ### Exercice 4-bis : Affichage de motifs - pyramides
 - ce programme affiche des étoiles sous la forme d'un piramide
 - la methode **repeat** permet de dupliquer une chaine de caracters plusieurs fois
@@ -136,6 +143,8 @@ for (let i = 1; i <= taille; i++) {
 }
 
 ```
+![img_4.png](code/img_4.png)
+
 ### Exercice 5 : Tester si un nombre est premier
 ```javascript
 function estPremier(n) {
@@ -168,6 +177,8 @@ if (nombre < 1) {
 }
 
 ```
+![img_5.png](code/img_5.png)
+![img_6.png](code/img_6.png)
 ### Exercice 6 : Suite de Fibonacci
 - Fibo1
 ```javascript
@@ -198,6 +209,7 @@ if (n < 0) {
 
 
 ```
+![img_7.png](code/img_7.png)
 - Fibo2
 ```javascript
 // Fibo2
@@ -227,3 +239,4 @@ console.log(
     `Le premier terme de Fibonacci supérieur à ${valeur} est ${valFibo}, au rang ${rangFibo}.`
 );
 ```
+![img_8.png](code/img_8.png)

@@ -26,3 +26,4 @@ function triangle2(taille) {
 const taille = parseInt(prompt("Entrez la taille du motif : "));
 triangle1(taille);
 //triangle2(taille);
+
