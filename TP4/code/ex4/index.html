@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Permuter</title>
+    <style>
+        body {
+            background: #1b73e822;
+        }
+
+    </style>
+
+</head>
+<body>
+<div class="form">
+    <h1>Calculateur d'IMC</h1>
+    <table>
+        <tr>
+            <td><label for="poinds">Poinds (kg): </label></td>
+            <td><input type="number" name="poinds" id="poinds" value="85"></td>
+        </tr>
+        <tr>
+            <td><label for="taille">Taille (m): </label></td>
+            <td><input type="number" name="taille" id="taille" value="1.85"></td>
+        </tr>
+    </table>
+    <input type="button" value="Calculer" onclick="calculer()">
+
+    <p id="result"></p>
+</div>
+<script>
+    function calculer() {
+
+        let imc = Number(poinds.value) /(Number(taille.value) * Number(taille.value));
+
+        result.innerText = "Votre IMC est " + imc.toFixed(2)+". "+imcText(imc);
+
+
+
+    }
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Permuter</title>
+    <style>
+        body {
+            background: #1b73e822;
+        }
+        .form {
+            width: 200px;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+        input[type=button] {
+            width: 100px;
+        }
+    </style>
+</head>
+<body>
+<div class="form">
+    <input type="number" name="n1" id="n1">
+    <input type="number" name="n2" id="n2">
+    <input type="button" value="Permuter" onclick="permuter()">
+</div>
+
+<script>
+    function permuter() {
+        let n1 = document.getElementById("n1");
+        let n2 = document.getElementById("n2");
+        let temp = n1.value;
+        n1.value = n2.value;
+        n2.value = temp;
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Permuter</title>
+    <style>
+        body {
+            background: #1b73e822;
+        }
+        .form {
+            width: 200px;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+        input[type=button] {
+            width: 100px;
+        }
+        .operations {
+            display: flex;
+            width: 15px;
+            gap: 10px;
+        }
+    </style>
+</head>
+<body>
+<div class="form">
+    <input type="number" name="n1" id="n1">
+    <input type="number" name="n2" id="n2">
+    <div class="operations">
+        <input type="button" value="+" onclick="plus()">
+        <input type="button" value="-" onclick="minus()">
+        <input type="button" value="*" onclick="times()">
+        <input type="button" value="/" onclick="divide()">
+    </div>
+    <input type="text" id="result">
+
+</div>
+<script>
+    function plus() {
+        result.value = Number(n1.value) + Number(n2.value);
+    }
+    function minus() {
+        result.value = Number(n1.value) - Number(n2.value);
+    }
+    function times() {
+        result.value = Number(n1.value) * Number(n2.value);
+    }
+    function divide() {
+        result.value = Number(n1.value) / Number(n2.value);
+    }
+</script>
+</body>
+</html>
