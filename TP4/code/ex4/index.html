@@ -1,46 +1,162 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Permuter</title>
+    <title>Calculatrice Avancée</title>
+
     <style>
+        * {
+           padding: 0;
+           margin: 0;
+           box-sizing: border-box;
+        }
         body {
-            background: #1b73e822;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .calculator {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            grid-column-start: 3;
+            gap: 5px;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.3);
+        }
+
+        input {
+            grid-column: span 7;
+            height: 60px;
+            text-align: right;
+            font-size: 18px;
+            border-radius: 10px;
+            margin-bottom: 10px;
+            background: #e9ecef;
+        }
+
+        button {
+            background-color: #999999;
+            color: #3e3e3e;
+            border: #ddd 1px solid;
+            padding: 15px 25px ;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .number {
+            background-color: #fff;
+        }
+
+        button:hover {
+            background-color: #ddd;
+        }
+
+        .hidden {
+            visibility: hidden;
         }
 
     </style>
-
 </head>
 <body>
-<div class="form">
-    <h1>Calculateur d'IMC</h1>
-    <table>
-        <tr>
-            <td><label for="poinds">Poinds (kg): </label></td>
-            <td><input type="number" name="poinds" id="poinds" value="85"></td>
-        </tr>
-        <tr>
-            <td><label for="taille">Taille (m): </label></td>
-            <td><input type="number" name="taille" id="taille" value="1.85"></td>
-        </tr>
-    </table>
-    <input type="button" value="Calculer" onclick="calculer()">
 
-    <p id="result"></p>
+<div class="calculator">
+    <input type="text" id="display" disabled>
+
+    <button class="hidden" ></button>
+    <button class="hidden" ></button>
+    <button class="hidden" ></button>
+    <button onclick="addToDisplay('(')">(</button>
+    <button onclick="addToDisplay(')')">)</button>
+
+    <button onclick="addToDisplay('%')">%</button>
+
+    <button onclick="clearDisplay()">CE</button>
+
+
+    <button onclick="addToDisplay('sin(')">sin</button>
+    <button onclick="addToDisplay('cos(')">cos</button>
+    <button onclick="addToDisplay('tan(')">tan</button>
+    <button class="number" onclick="addToDisplay('7')">7</button>
+    <button class="number" onclick="addToDisplay('8')">8</button>
+    <button class="number" onclick="addToDisplay('9')">9</button>
+    <button onclick="addToDisplay('/')">÷</button>
+
+    <button onclick="addToDisplay('π')">π</button>
+
+    <button onclick="addToDisplay('ln(')">ln</button>
+    <button onclick="addToDisplay('log(')">log</button>
+
+    <button class="number" onclick="addToDisplay('4')">4</button>
+    <button class="number" onclick="addToDisplay('5')">5</button>
+    <button class="number" onclick="addToDisplay('6')">6</button>
+    <button  onclick="addToDisplay('*')">x</button>
+
+    <button onclick="addToDisplay('√(')">√</button>
+    <button onclick="addToDisplay('e')">e</button>
+
+    <button onclick="addToDisplay('EXP')">EXP</button>
+
+    <button class="number" onclick="addToDisplay('1')">1</button>
+    <button class="number" onclick="addToDisplay('2')">2</button>
+    <button class="number" onclick="addToDisplay('3')">3</button>
+
+    <button onclick="addToDisplay('-')">-</button>
+
+    <button onclick="addToDisplay('^')">x^</button>
+    <button onclick="addToDisplay('^2')">x²</button>
+
+
+
+    <button onclick="addToDisplay('.')">.</button>
+
+    <button class="number" onclick="addToDisplay('0')">0</button>
+    <button onclick="calculateResult()">=</button>
+
+    <button onclick="addToDisplay('+')">+</button>
+
 </div>
+
 <script>
-    function calculer() {
-
-        let imc = Number(poinds.value) /(Number(taille.value) * Number(taille.value));
-
-        result.innerText = "Votre IMC est " + imc.toFixed(2)+". "+imcText(imc);
-
-
-
+    function addToDisplay(value) {
+        const display = document.getElementById('display');
+        display.value += value;
     }
 
+    function clearDisplay() {
+        document.getElementById('display').value = '';
+    }
+
+    function calculateResult() {
+        let expression = document.getElementById('display').value;
+
+        // Remplacement
+        console.log("before")
+        console.log(expression)
+        expression = expression.replace(/π/g, 'Math.PI');
+        expression = expression.replace(/e/g, 'Math.E');
+        expression = expression.replace(/sin\(/g, 'Math.sin(');
+        expression = expression.replace(/cos\(/g, 'Math.cos(');
+        expression = expression.replace(/tan\(/g, 'Math.tan(');//bonne
+        expression = expression.replace(/log\(/g, 'Math.log10(');//bonne
+        expression = expression.replace(/ln\(/g, 'Math.log(');//bonne
+        expression = expression.replace(/√\(/g, 'Math.sqrt(');//bonne
+        expression = expression.replace(/\^/g, '**');//bonne
+        expression = expression.replace(/\^2/g, '**2');//bonne
+
+        try {
+            console.log("after")
+
+            console.log(expression)
+            document.getElementById('display').value = eval(expression);
+        } catch (e) {
+            alert('Expression non valide');
+            clearDisplay();
+        }
+    }
 
 </script>
 </body>

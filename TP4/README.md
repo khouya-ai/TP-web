@@ -4,6 +4,7 @@ Réalisé par **Oussama KHOUYA**, le : **25-02-2025**, lien sur [github](https:/
 L'objectif de ce tp est de pratiquer les évènements dans le language javascript :
 
 ### Exercice 1 : Permutation
+![img.png](code/ex1/img.png) ![img_1.png](code/ex1/img_1.png)
 ```html
 <style>
     body {
@@ -39,7 +40,7 @@ L'objectif de ce tp est de pratiquer les évènements dans le language javascrip
 </body>
 ```
 ### Exercice 2 : Calculatrice-Simple
-![img.png](code/ex2/img.png)
+![img_3.png](code/ex2/img_3.png) ![img.png](code/ex2/img.png) ![img_1.png](code/ex2/img_1.png) ![img_2.png](code/ex2/img_2.png)
 ```html
 <style>
     body {
@@ -91,6 +92,7 @@ L'objectif de ce tp est de pratiquer les évènements dans le language javascrip
 </body>
 ```
 ### Exercice 3 : Calcul IMC
+![img.png](code/ex3/img.png)
 ```html
 <head>
    <style>
@@ -163,6 +165,32 @@ L'objectif de ce tp est de pratiquer les évènements dans le language javascrip
 </body>
 ```
 ### Exercice 4 : Calculatrice-Avancée
-```html
+![img_1.png](code/ex4/img_1.png)
 
+- Le calule se base sur l'evaluation de la chaine entrée par l'utilisateur en utilisant la methode ``eval``
+- L'utilisation des expressions régulieres facilite le remplacement des écriture mathematique par les expression et les fonctions math de javascript
+```javascript
+function calculateResult() {
+        let expression = document.getElementById('display').value;
+
+        // Remplacement
+        expression = expression.replace(/π/g, 'Math.PI');
+        expression = expression.replace(/e/g, 'Math.E');
+        expression = expression.replace(/sin\(/g, 'Math.sin(');
+        expression = expression.replace(/cos\(/g, 'Math.cos(');
+        expression = expression.replace(/tan\(/g, 'Math.tan(');//bonne
+        expression = expression.replace(/log\(/g, 'Math.log10(');//bonne
+        expression = expression.replace(/ln\(/g, 'Math.log(');//bonne
+        expression = expression.replace(/√\(/g, 'Math.sqrt(');//bonne
+        expression = expression.replace(/\^/g, '**');//bonne
+        expression = expression.replace(/\^2/g, '**2');//bonne
+
+        try {
+
+            document.getElementById('display').value = eval(expression);
+        } catch (e) {
+            alert('Expression non valide');
+            clearDisplay();
+        }
+    }
 ```
