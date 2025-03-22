@@ -17,6 +17,12 @@
       "login": "samir55",
       "name": "Samir Katir",
       "password": "1234"
+    },
+    {
+      "id": "07a9",
+      "login": "khadija123",
+      "name": "Khadija Radi",
+      "password": "1234"
     }
   ]
 }
