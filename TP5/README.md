@@ -21,7 +21,7 @@ Pour accéder au :
 -  serveur : [http://localhost:3000](http://localhost:3000) <br>
 - l'application Angular : [http://localhost:4200](http://localhost:4200)<br>
 -  l'application React : [http://localhost:3001](http://localhost:3001)
-### Angular
+
 Pour ajouter un nouveau utilisateur, aller sur [http://localhost:4200/register](http://localhost:4200/register)
 
 ![img.png](images/img.png)
@@ -45,6 +45,7 @@ Pour se connecter aller sur [http://localhost:4200/login](http://localhost:4200/
 ![img_1.png](images/img_1.png)
 
 Après la connexion, l'utilisateur est redirigé vers la page d'accueil
+
 ![img_2.png](images/img_2.png)
 
 pour se déconnecter, il suffit de cliquer sur le bouton `logout`
@@ -52,5 +53,6 @@ pour se déconnecter, il suffit de cliquer sur le bouton `logout`
 ![img_4.png](images/img_4.png)
 
 l'utilisateur est redirigé vers la page de connexion
+
 ![img_3.png](images/img_3.png)
 
