@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE bourse [
+        <!ELEMENT bourse (societe+)>
+        <!ELEMENT societe (codeSociete, nomSociete, datIntroduction, cotations)>
+        <!ATTLIST societe type (banque | assurance) #REQUIRED>
+        <!ELEMENT codeSociete (#PCDATA)>
+        <!ELEMENT nomSociete (#PCDATA)>
+        <!ELEMENT datIntroduction (#PCDATA)>
+        <!ELEMENT cotations (cotation+)>
+        <!ELEMENT cotation EMPTY>
+        <!ATTLIST cotation
+                num ID #REQUIRED
+                dateCotation CDATA #REQUIRED
+                valeurAction CDATA #REQUIRED>
+        ]>
+<bourse>
+    <societe type="banque">
+        <codeSociete>SGMB</codeSociete>
+        <nomSociete>Société Générale</nomSociete>
+        <datIntroduction>2000-11-01</datIntroduction>
+        <cotations>
+            <cotation num="23" dateCotation="2025-01-01" valeurAction="650"/>
+            <cotation num="24" dateCotation="2025-01-02" valeurAction="680"/>
+        </cotations>
+    </societe>
+    <societe type="assurance">
+        <codeSociete>Wafa</codeSociete>
+        <nomSociete>Wafa Assurance</nomSociete>
+        <datIntroduction>2002-03-11</datIntroduction>
+        <cotations>
+            <cotation num="25" dateCotation="2025-01-01" valeurAction="420"/>
+        </cotations>
+    </societe>
+</bourse>
