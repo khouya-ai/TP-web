@@ -1,4 +1,4 @@
-## TD n°2: Schéma XML
+## TP n°2: Schéma XML
 Réalisé par **Oussama KHOUYA**
 
 Ce TP s'agit de la création et la validation de documents XML en utilisant des schémas de validation XSD (XML Schema Definition)  :
